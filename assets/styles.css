@@ -1,0 +1,33 @@
+div#form{
+    border: solid 1px rgb(169, 169, 169);
+    border-radius: 5px;
+    padding:20px 0 0 25px;
+}
+h1.title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 70px;
+    color: rgb(108, 108, 108);
+}
+.theme{
+    border-radius:5px;
+    color:  rgb(108, 108, 108);
+    background-color: rgb(237, 226, 252);
+    margin:10px 10px 10px 0px;
+}
+h4.input-theme{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: rgb(108, 108, 108);
+}
+#theme-form{
+     margin: 20px;
+}
+#theme-input{
+    margin: 0 10px 0 10px;
+}
+.input-button{
+    border-radius:5px;
+    color:  rgb(108, 108, 108);
+    background-color: rgb(252, 254, 138);
+    margin:15px 10px 5px 0px;
+}
