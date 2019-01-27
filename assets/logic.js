@@ -2,12 +2,14 @@
 var picThemes = ["summer daze", "whitewater kayaking", "surf bum", "log home", "backcountry camping"];
 
 
+//$(document).$(document).ready(function () {
+
 function displayGiphies() {
 
     var api = "http://api.giphy.com/v1/gifs/search?q=";
     var viewerChoice = $(this).attr("data-name");
     viewerInput = viewerChoice.replace(/ /g, "+");
-    var limit = '&limit=2';
+    var limit = '&limit=50';
     var key = "&api_key=N7IJvMUDuL34fiIiCeJbuHKUMZ7Soltm";
     var queryURL = api + viewerInput + key + limit;
     //http://api.giphy.com/v1/gifs/search?q=bruce+willis&api_key=N7IJvMUDuL34fiIiCeJbuHKUMZ7Soltm      
@@ -16,17 +18,17 @@ function displayGiphies() {
     method: "GET"
     
     }).then(function(response) {
-        $("#theme-view2").text(JSON.stringify(response));
-        console.log("var queryURL: " + queryURL);
-        //console.log("var userInput: " + viewerInput);
-        var imageUrl = response.data.image_original_url;
-        console.log("ImageURL: " + imageUrl);
-        var gifDiv = $("<img>");
-        gifDiv.attr("src", imageUrl);
-        gifDiv.attr("alt", viewerChoice + " image");
-
-        $("#images").prepend(gifDiv);
- 
+        var imageUrl = response.data;
+        for(var i=0; i<imageUrl.length;i++){
+        var imageNum = [Math.floor(imageUrl.length * Math.random()*2)];
+        var imageResult = $("<img>");
+        
+        imageResult.attr("src", imageUrl[imageNum].images.fixed_height.url);
+        imageResult.addClass("images");
+        
+        $("#images").prepend(imageResult);
+        
+        }
     });
 }
 
@@ -46,10 +48,17 @@ function renderButtons() {
     event.preventDefault();
     var theme = $("#theme-input").val().trim();
     picThemes.push(theme);
-    console.log(picThemes);
+    //console.log(picThemes);
+    if(theme === ""){
+        alert("Please input a valid search term!")
+        picThemes.pop(theme);
+    }
     
 //render list of themes.
     renderButtons();
 });
     $(document).on("click", ".theme", displayGiphies);
     renderButtons();
+
+
+//});
