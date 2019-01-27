@@ -10,8 +10,8 @@ div#title{
 }
 .theme{
     border-radius:5px;
-    color:  rgb(108, 108, 108);
-    background-color: rgb(237, 226, 252);
+    color:  rgb(240, 240, 240);
+    background-color: rgb(6, 145, 1);
     margin:10px 10px 10px 0px;
 }
 h4.input-theme{
@@ -27,8 +27,8 @@ h4.input-theme{
 }
 .input-button{
     border-radius:5px;
-    color:  rgb(108, 108, 108);
-    background-color: rgb(252, 254, 138);
+    color:  rgb(238, 238, 238);
+    background-color: rgb(218, 105, 0);
     margin:15px 10px 5px 0px;
 }
 .images{

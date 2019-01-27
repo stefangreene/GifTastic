@@ -20,7 +20,7 @@ function displayGiphies() {
     }).then(function(response) {
         var imageUrl = response.data;
         for(var i=0; i<imageUrl.length;i++){
-        var imageNum = [Math.floor(imageUrl.length * Math.random()*2)];
+        var imageNum = [Math.floor(imageUrl.length * Math.random()/2)];
         var imageResult = $("<img>");
         
         imageResult.attr("src", imageUrl[imageNum].images.fixed_height.url);
