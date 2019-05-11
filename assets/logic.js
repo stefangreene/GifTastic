@@ -6,7 +6,7 @@ var picThemes = ["summer daze", "whitewater kayaking", "surf bum", "log home", "
 
 function displayGiphies() {
 
-    var api = "http://api.giphy.com/v1/gifs/search?q=";
+    var api = "https://api.giphy.com/v1/gifs/search?q=";
     var viewerChoice = $(this).attr("data-name");
     viewerInput = viewerChoice.replace(/ /g, "+");
     var limit = '&limit=50';
@@ -19,6 +19,7 @@ function displayGiphies() {
     
     }).then(function(response) {
         var imageUrl = response.data;
+        console.log(response.data);
         for(var i=0; i<imageUrl.length;i++){
         var imageNum = [Math.floor(imageUrl.length * Math.random()/2)];
         var imageResult = $("<img>");
